@@ -138,18 +138,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
 	<!-- Charset -->
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-
-	<!-- Clear Cache 
-	<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-	<meta http-equiv="Pragma" content="no-cache">
-	<meta http-equiv="Expires" content="0">-->
 	
 	<title>JJWebCreation</title>
 	<link rel="shortcut icon" href="images/jjweblogoicon.ico">
 	
 	<!-- CSS -->
 	<link rel="stylesheet" href="css/style.css">
-	<link rel="stylesheet" href="css/layout.css">
 	<link rel="stylesheet" href="css/panel.css">
 	
 	<!-- JS -->
@@ -157,36 +151,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	
 </head>
 <body>
-<!-- Page Container -->
+<!-- Start Page Container -->
 <div id="container">
-	<!-- Header -->
+	<!-- Start Header -->
 	<?php include "layout/header.php";?>
+	<!-- End Header -->
 
 	<!-- Start Content -->
 	<div id="content">
-	<?php 
-	$whitelist = array("home", "about", "contact", "services", "portfolio");
-	if (!isset($_GET["page"])){ 
-		include "site_files/home.php";	// index page is loaded - include home page
-	}
-	else{ 
-		if (in_array($_GET["page"], $whitelist)) {
-			include "site_files/".$_GET["page"].".php";	// include requested white-listed page
-		}
-		else{
-			include "site_files/home.php";	// requested page not found in white-list - default to home page
-		}
-	}
-	?>
+		<div id="content-fixer">
+			<?php include "site_files/members.php"; ?>
+		</div>
 	</div>
 	<!-- End Content -->
-
 
 	<!-- Start Footer-->
 	<?php include "layout/footer.php";?>
 	<!-- End Footer-->
 </div>
 <!-- End Page Container -->
-
 </body>
 </html>

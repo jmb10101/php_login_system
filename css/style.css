@@ -116,7 +116,7 @@ input[type=submit]{
 /***** etc *****/
 .post-message{
 	background: #eef;
-	margin: 10px 0 10px 0;
+	margin: 20px 0 20px 0;
 }
 .alert-info { 
 /* used primarily for browser output for troubleshooting code */
@@ -142,3 +142,27 @@ input[type=submit]{
 	transform: translateY(-50%);
 }
 
+/***** Main Content Wrapper *****/
+#content{
+	width: 800px;
+	position: relative;
+	left: 50%;
+	top: 80px;
+}
+#content-fixer{
+	position: relative;
+	left: -50%;
+	background: #ddf;
+	padding: 10px 10px 10px 10px;
+}
+
+
+/***** Footer *****/
+#main-footer {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	height: 150px;
+	width: 100%;
+	background-color: #ddf;
+}

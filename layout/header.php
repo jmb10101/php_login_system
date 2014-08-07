@@ -1,4 +1,3 @@
-<!-- make the whole list item for nav links clickable, and redirect page on click -->
 <?php
 // if login / registration errors exist, show the panel
 if (isset($_SESSION["msg"]["login-err"]) && isset($_SESSION["msg"]["login-err"])) {
@@ -16,20 +15,6 @@ if (isset($_SESSION["msg"]["login-err"]) && isset($_SESSION["msg"]["login-err"])
 ?>
 <script>
 	$(document).ready(function(){
-		// nav
-		$("#nav-home").click(function(){
-			$(location).attr("href","index.php?page=home");
-		});
-		$("#nav-about").click(function(){
-			$(location).attr("href", "index.php?page=about");
-		});
-		$("#nav-services").click(function(){
-			$(location).attr("href", "index.php?page=services");
-		});
-		$("#nav-contact").click(function(){
-			$(location).attr("href", "index.php?page=contact");
-		});
-		
 		// log in panel
 		$(".tab li.notlogged").click(function(){	
 			$("#panel").slideToggle(300, function() {;
@@ -43,10 +28,6 @@ if (isset($_SESSION["msg"]["login-err"]) && isset($_SESSION["msg"]["login-err"])
 	});
 </script>
 
-<!--Start Layout Header-->
-
-<div id="banner"></div>
-<div id="logo"></div>
 
 <!-- Start Log in panel -->
 <div id="top-panel">
@@ -118,31 +99,5 @@ if (isset($_SESSION["msg"]["login-err"]) && isset($_SESSION["msg"]["login-err"])
 	</div>
 </div>
 <!-- End Log in panel -->
-
-<!--Start Nav-->
-
-
-<nav id="main-nav">
-	<ul>
-		<li class="left-nav-link">
-		</li>
-		<li id="nav-home" class="home-nav-link">
-			<a href="index.php?page=home"></a>
-		</li>
-		<li id="nav-about" class="nav-link">
-			<a href="index.php?page=about">&nbsp About JJWebCreation</a>
-		</li>
-		<li id="nav-services" class="nav-link">
-			<a href="index.php?page=services">&nbsp Our Services and Portfolio</a>
-		</li>
-		<li id="nav-contact" class="nav-link">
-			<a href="index.php?page=contact">&nbsp Contact</a>
-		</li>
-		<li class="right-nav-link">
-		</li>
-
-	</ul>
-</nav>
-<!--End Nav-->
 <!--End Layout Header-->
 

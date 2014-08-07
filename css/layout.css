@@ -1,0 +1,127 @@
+/* layout.css */
+
+
+/***** Layout Features *****/
+#banner{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 77px;
+	background: white url('../images/jjwebcre-banner.png') no-repeat;
+	border-bottom: 2px solid rgb(130,111,255);
+}
+#logo{
+	position: absolute;
+	background: url('../images/jjwebcre-logo.png') no-repeat;
+	width: 120px;
+	height: 120px;
+	top: 35px;
+
+}
+
+#crest{
+	position: absolute;
+	background: url('../images/crest-trans.png') no-repeat;
+	width: 105px;
+	height: 95px;
+	right: 100px;
+	top: -8px;
+	transition: top 0.4s;
+	-moz-transition: top 0.4s;
+	-webkit-transition: top 0.4s;
+}
+#crest:hover{
+	top: 0px;
+}
+
+
+/***** Main Nav *****/
+#main-nav{
+	position: absolute;
+	top: 114px;
+	left: 150px;	
+	width: 600px;
+	z-index: 999;
+}
+#main-nav ul{
+	list-style: none;
+	padding: 0;
+	margin: 0;		
+}
+#main-nav  li{
+    display: inline;
+	font-family: arial;
+	font-weight: bold;
+	font-size: 14px;
+	position: relative;
+	padding: 10px 10px 10px 10px;
+	border-width: 1px 0px 1px 0px;
+	border-style: solid;
+	border-color: #004;
+	cursor: pointer;
+	background: linear-gradient(#fff, #ddf);
+
+}
+#main-nav li.nav-link:hover, li.home-nav-link:hover{
+	/*background: linear-gradient(#bbf, #fff);*/
+	-moz-box-shadow: 0px 0px 25px #44f;
+	-webkit-box-shadow: 0px 0px 25px #44f;
+	box-shadow: 0px 0px 25px #44f;
+	z-index: 999;
+
+}
+#main-nav li.right-nav-link {
+	border-top-right-radius: 20px;
+	border-right-width: 1px;
+	border-bottom-right-radius: 20px;
+	cursor: default;
+	
+}
+#main-nav li.left-nav-link {
+	border-top-left-radius: 20px;
+	border-bottom-left-radius: 20px;
+	
+	border-left: 1px solid black;
+	cursor: default;
+}
+#main-nav li.home-nav-link a{
+	position: relative;
+	top: 5px;
+	left: 2px;
+	padding: 5px 10px 5px 10px;
+	background: url('../images/home-link.png') no-repeat;	
+}
+
+#main-nav li a, #main-nav li a:link, #main-nav li a:visited, #main-nav li a:hover {
+	color: rgb(40,20,255);
+	text-decoration: none;
+}
+
+
+/***** Main Content Wrapper *****/
+#content{
+	width: 80%;
+	padding: 10px 10px 10px 10px;
+	position: relative;
+	top: 160px;
+	left: 120px;
+	
+	border: 5px solid rgb(130,111,255);
+	border-style: inset;
+	border-top-left-radius: 15px;
+	clear: both;
+	background-color: rgb(250,250,255);
+}
+
+
+/***** Footer *****/
+#main-footer {
+
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	height: 150px;
+	width: 100%;
+	background-color: #ddf;
+}

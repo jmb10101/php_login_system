@@ -1,0 +1,64 @@
+/* panel.css */
+/* Log in / Registration */
+
+#top-panel { /* sliding panel */
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 1000;
+}
+#panel {
+	width: 100%;
+	height: 270px;
+	background: #ddf;
+	display: none;
+}
+#panel .panel-box-left, #panel .panel-box-mid , #panel .panel-box-right {
+	width: 320px;
+	height: 240px;
+	float: left;
+	background: #eef;
+	margin-top: 15px;
+	padding: 8px;
+
+}
+#panel .panel-box-left, #panel .panel-box-mid {
+	margin-right: 10px;
+}
+#panel .panel-box-right, #panel .panel-box-mid {
+	margin-left: 10px;	
+}
+
+.tab {
+	background: url('../images/tab_b.png') repeat-x 0 0;
+	height: 10px;
+}
+.tab ul.login {
+	font-weight: bold;
+	font-size: 14px;
+	float: left;
+	position: relative;
+	left: -50%;
+	list-style: none;
+}
+.tab ul.login li {
+	float: left;
+	cursor: pointer;
+}
+.tab ul.login li.middle {
+	background: url('../images/tab_m.png') repeat-x 0 0;
+	line-height: 40px;
+}
+.tab ul.login li.left {
+	background: url('../images/tab_l.png') no-repeat left 0;
+	width: 30px;
+	height: 42px;
+}
+.tab ul.login li.right {
+	background: url('../images/tab_r.png') no-repeat left 0;
+	width: 30px;
+	height: 42px;
+}
+
+

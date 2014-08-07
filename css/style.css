@@ -15,7 +15,7 @@ html, body{
 	min-height: 100%;
 }
 body{
-	background: url('../images/blu_stripes.png'); /*credit: subtlepatterns.com */
+	background: #eef;
 }
 #container {	/* container for entire page */
 	min-height: 100%;

@@ -139,7 +139,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	<!-- Charset -->
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	
-	<title>JJWebCreation</title>
+	<title>Basic Login System</title>
 	<link rel="shortcut icon" href="images/jjweblogoicon.ico">
 	
 	<!-- CSS -->

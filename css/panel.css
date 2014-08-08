@@ -46,7 +46,7 @@
 	float: left;
 	cursor: pointer;
 }
-.tab ul.login li.middle {
+.tab ul.login li.middle { 
 	background: url('../images/tab_m.png') repeat-x 0 0;
 	line-height: 40px;
 }

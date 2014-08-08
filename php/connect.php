@@ -8,5 +8,5 @@ $db_user		= "root";
 $db_pass		= "";
 $db_database	= "accounts";
 
-$link = mysqli_connect($db_host, $db_user, $db_pass, $db_database) or die("Unable to connect to the database.");
+$link = mysqli_connect($db_host, $db_user, $db_pass, $db_database) or die("Unable to connect to the database.");	// If the database cannot be accessed, the error message will be outputted to the screen.
 ?>

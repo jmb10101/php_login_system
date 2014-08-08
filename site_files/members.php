@@ -3,9 +3,10 @@
 <br>
 <h2>Your Info</h2>
 <?php 
-	if (!isset($_SESSION["id"])) {
+	if (!isset($_SESSION["id"])) {	// if user is not logged in
 		echo "<p class='error'>You are not logged in</p><br>";
 	} else {
+		// if user is logged in, then fetch some info about that user from the database, and display it
 		$user = mysqli_fetch_assoc(mysqli_query($link, "SELECT * FROM users WHERE id='".$_SESSION['id']."'"));
 		echo "username: ".$user["username"]."<br>";
 		echo "email: ".$user["email"]."<br>";
@@ -22,7 +23,7 @@
 	// if post is submitted, add the post to the database
 	if (isset($_SESSION["id"]) && $_SERVER["REQUEST_METHOD"] == "POST") {
 		if ($_POST["submit"] == "Post") {
-			if ($_POST["post_message"]) {
+			if ($_POST["post_message"]) {	// only add the post if it is not empty
 				// scrub input
 				$_POST["post_message"] = nl2br(htmlspecialchars($_POST["post_message"]));
 		
@@ -42,7 +43,7 @@
 	// list posts from the database
 	$posts = mysqli_query($link, "SELECT posts.post, users.username, posts.date FROM posts INNER JOIN users ON posts.user=users.id");
 	
-	while ($row = mysqli_fetch_assoc($posts)) {
+	while ($row = mysqli_fetch_assoc($posts)) {	// loop throw each row in the posts table and output the message along with the user that posted it and the date it was posted
 ?>
 		<div class='post-message'>
 			<p><?php echo $row["post"] ?></p>

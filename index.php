@@ -1,9 +1,10 @@
 <?php
 
+// These two files must be included in order for this login system to function
 require "php/functions.php";
 require "php/connect.php";
 
-start_primary_session();
+start_primary_session();	// Start the session
 	
 if (isset($_SESSION["id"]) && !isset($_COOKIE["cRememberMe"]) && isset($_SESSION["rememberMe"]))
 {
@@ -16,17 +17,17 @@ if (isset($_SESSION["id"]) && !isset($_COOKIE["cRememberMe"]) && isset($_SESSION
 	}
 }
 
-if (isset($_GET["logoff"]))
+if (isset($_GET["logoff"]))	// The logoff tab has been clicked, destroy the session 
 {
 	$_SESSION = array();
 	session_destroy();
-	header("Location: index.php?page=home");
+	header("Location: index.php");	// redirect user to home page
 	echo "<span class='alert-info'>Session has been Destroyed!-Logoff</span>";
 }
 
 // check to see if we need to clear error messages
 if (isset($_SESSION["clear_errors"])) {
-	if ($_SESSION["clear_errors"]) {
+	if ($_SESSION["clear_errors"]) {	// if this is true, that means the last time this site was loaded, it was not as a result of submitting a form. We need to clear the messages so that they do not persist throughout the session.
 		$_SESSION["msg"]["login-err"] = "";
 		$_SESSION["msg"]["register-err"] = "";	
 		$_SESSION["clear_errors"] = false;
@@ -43,18 +44,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		if(!$_POST["loginUsername"] || !$_POST["loginPassword"])
 			$err[] = "*All fields must be filled in!";
 			
-		if(!count($err)) {		
+		if(!count($err)) {		// If there are no errors, scrub input and continue
 			$_POST["loginUsername"] = mysqli_real_escape_string($link, scrub_input($_POST["loginUsername"]));
 			$_POST["loginPassword"] = mysqli_real_escape_string($link, $_POST["loginPassword"]);
 
-			// username / md5 check
-			//$_SESSION["test"] = "->".$_POST['loginUsername']." / ".md5($_POST['loginPassword']);	
 			
 			// Attempt to find login information inside the accounts database
 			$row = mysqli_fetch_assoc(mysqli_query($link, "SELECT id, username FROM users WHERE username='{$_POST['loginUsername']}' AND password='".md5($_POST['loginPassword'])."'"));
 			
 			if($row["username"]) {
-				// Login submission was found, Login the user
+				// Login submission was found, Login the user by setting the session variables
 				$_SESSION["username"] = $row["username"];
 				$_SESSION["id"] = $row["id"];
 				$_SESSION["rememberMe"] = $_POST["rememberMe"];

@@ -143,13 +143,15 @@ input[type=submit]{
 }
 
 /***** Main Content Wrapper *****/
-#content{
+#content{	/* This id specifies the position and size of the content area. 
+It will be postioned at 50% of the screen, but the conetent-fixer id will move it back half the size of this container so that it is centered */
 	width: 800px;
 	position: relative;
 	left: 50%;
 	top: 80px;
 }
-#content-fixer{
+#content-fixer{ /* This id moves the content area back 50% the width of the container so that it is centered on the screen
+- The previous classes center-*-container-* do not work in this situation because the content cannot be floated and keep a margin between the footer and the content at the same time */
 	position: relative;
 	left: -50%;
 	background: #ddf;
